@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Your Appliances</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Asap:400italic,700,700italic,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+  <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert.css"/>
+  <script src="sweetalert/sweetalert.min.js"></script>
+</head>
+<body id="HeatPumpPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="homepage.html">SWITCH</a><img src="http://www.kristiewhite.net/images/homeIcon.png" style="padding-top: 10px; padding-left:0;">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="homepage.html#activity-log" style="color:white;">ACTIVITY LOG &amp HISTORY</a></li>
+        <li><a href="homepage.html#main-appliances" style="color:white;">MAIN APPLIANCES</a></li>
+		<li class="dropdown"><a href="#" class="dropdown-toggle" style="color: white;"data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="username" style="color:white">Jenna </span><i class="fa fa-user"></i> <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#settings" style="color: black;">Settings</a></li>
+				<li role="separator" class="divider"></li>
+				<li class="dropdown-header" style="color: black;"><b>Personal Settings</b></li>
+				<li><a href="#privacy" style="color: black; font-family: 'Asap', sans-serif; letter-spacing: 3px; font-size: 12px;">Privacy</a></li>
+				<li><a href="#my-account" style="color: black; font-family: 'Asap', sans-serif; letter-spacing: 3px; font-size: 12px;">My Account</a></li>
+				<button type="button" href="#logout" class="btn btn-md" style="float: right; margin-right: 5px; font-family: 'Asap', sans-serif; letter-spacing: 3px; font-size: 12px;">Logout</button><br>
+			</ul>
+		</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!--Vertical navigation bar-->
+<div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+			<li class="dropdown"><a href="#kitchen-appliances" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kitchen </span><span class="caret"></span></a>
+			<hr class="featurette-divider">
+			<ul class="dropdown-menu">
+				<li><a href="#fridge" style="font-family: 'Asap', sans-serif">Fridge</a></li>
+				<li><a href="oven.html">Oven</a></li>
+				<li><a href="#kettle">Kettle</a></li>
+				<li><a href="#microwave">Microwave</a></li>
+			</ul>
+			</li>
+          </ul>
+		  <br>
+          <ul class="nav nav-sidebar">
+			<li class="dropdown"><a href="#heating-appliances" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Heating <span class="caret"></span></a>
+			<hr class="featurette-divider">
+			<ul class="dropdown-menu">
+				<li><a href="#heat-pump">Heat Pump</a></li>
+			</ul>
+			</li>
+          </ul>
+          <ul class="nav nav-sidebar">
+			<li class="dropdown"><a href="#cleaning-appliances" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cleaning <span class="caret"></span></a>
+			<hr class="featurette-divider">
+			<ul class="dropdown-menu">
+				<li><a href="#washing-machine">Washing Machine</a></li>
+				<li><a href="#dryer">Dryer</a></li>
+			</ul>
+			</li>
+			</ul>
+</div>
+
+<div class="container" id="breadcrumb">
+	<ol class="breadcrumb">
+    <li><a href="homepage.html">Home</a></li>
+    <li><a href="homepage.html#main-appliances">Main Appliances</a></li>
+    <li class="active">Heat Pump</li>        
+  </ol>
+</div>
+
+<div class="row" id="settings-title">
+<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/172-200.png" alt="Heat-pump-icon"><h4 style="margin-left: 300px;"><strong>Heat Pump Settings</strong></h4>
+</div>
+
+<!--Heat Pump Settings Form-->
+<form class="form-horizontal" role="form" style="margin-left: 350px;">
+<div class="form-group">
+        <label class="control-label col-sm-2" for="status">Status:</label>
+		<label class="switch" style="margin-left: 180px;">
+			<input class="switch-input" type="checkbox" />
+			<span class="switch-label" data-on="On" data-off="Off"></span> <span class="switch-handle"></span>
+		</label>
+	</div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="temperature">Temperature:</label>
+    <div class="col-sm-8">
+      <input type="number" min="0" max="40" class="form-control" id="temperature" placeholder="Enter temperature (&deg C)">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="start-date">Start Date:</label>
+    <div class="col-sm-8">
+      <input type="date" class="form-control" id="start-date">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="start-time">Start Time:</label>
+    <div class="col-sm-8">
+      <input type="time" class="form-control" id="start-time">
+    </div>
+  </div>
+  <br>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-8" style="float: right;">
+		<button type="button" class="btn btn-default" id="cancel-btn"><a href="homepage.html#main-appliances">Cancel</a></button>
+		<button type="button" class="btn btn-default" id="submit-btn" onclick="showalert()">Submit</button>
+		<script src="js/index2.js"></script>
+    </div>
+  </div>
+</form>
+
+
+
+<!--Bottom navigation bar-->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#lights" style="color:white;">LIGHTS</a></li>
+        <li><a href="#blinds" style="color:white;">BLINDS</a></li>
+		<li><a href="#appliances" style="color:white;">APPLIANCES</a></li>
+		<li><a href="#security" style="color:white;">SECURITY</a></li>
+		<li><a href="#energy reports" style="color:white;">ENERGY REPORTS</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</body>
+</html>
+
